@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="shortcut icon" href="src/logo.png" type="image/png">
+    <meta name="keywords" content="impulse, Impulse, im pulse, Im pulse, message, messages, messaging, messenger" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="t-bar" hidden>
+        <div class="i-bar">
+            <!-- <img src="https://cdn-icons-png.flaticon.com/128/507/507257.png" alt="" class="arrow"> -->
+            <img src="../src/avatar.png" alt="" class="profile">
+            <div class="n-bar">
+            <span class="name" id="roomname"></span>
+            <span class="rno" id="roomnumber"></span>
+            </div>
+        </div>
+        <div class="c-bar">
+            <span class="t-dots" onclick="openOptionsMenu()">...</span>
+        </div>
+    </div>
+
+    <div class="deletor">
+        <span id= "dlen" onclick="deleteSelected()"></span>
+    </div>
+
+    <div class="om" id="om">
+        <li>Option 1</li>
+        <li>Option 2</li>
+        <li>Option 3</li>
+        <li>Option 4</li>
+        <li onclick="leaveRoom()">Leave Room</li>
+    </div>
+
+    <div class="m-bar">
+        <div class="messages" id="messages">
+        </div>
+    </div>
+
+    <div class="b-bar" hidden>
+       <!-- <div class="voice">
+            <img src="./src/voice.png" alt="" class="img1">
+        </div>-->
+        <div class="input-box">
+            <input type="text" placeholder="Message" id="message">
+        </div>
+        <button type="submit" class="send" id="send" onclick="sendMessage()">
+            <svg viewBox="0 0 24 24" class="img2">
+                <path fill="currentColor"
+                    d="M1.101,21.757L23.8,12.028L1.101,2.3l0.011,7.912l13.623,1.816L1.112,13.845 L1.101,21.757z"
+                    id="path"></path>
+            </svg>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
