@@ -236,6 +236,11 @@ li::selection {
         margin-top: 102px;
     }
 
+    .msg-right {
+        margin-right: 3px;
+        padding-block: 8px;
+    }
+
     .c-bar {
         margin-right: -5px;
     }
