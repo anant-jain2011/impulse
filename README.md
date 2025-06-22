@@ -1,6 +1,6 @@
 # 🚀 Impule – Real-Time Web Chat Application
 
-[Live Demo](https://vchats.vercel.app)
+[Live Demo](https://impulse-chat.vercel.app)
 
 **Impulse** is a lightweight, real-time chat application built using HTML, CSS, and JavaScript. It enables seamless communication between users through a clean and responsive interface.
 
