@@ -234,6 +234,7 @@ li::selection {
     .m-bar {
         height: calc(100% - 252px);
         margin-top: 102px;
+        padding-right: 5px;
     }
 
     .msg-right {
