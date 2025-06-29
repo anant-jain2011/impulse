@@ -59,8 +59,11 @@ const displayMessage = (content, position, id, sender) => {
         uname.classList.add("uname");
         newMsg.appendChild(uname);
     }
+
+    const contentHtml = document.createElement("div");
+    contentHtml.innerHTML = content;
     
-    newMsg.appendChild(document.createTextNode(content));
+    newMsg.appendChild(contentHtml.firstElementChild);
     msgBox.appendChild(newMsg);
 };
 
