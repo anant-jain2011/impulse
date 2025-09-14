@@ -224,9 +224,9 @@ const sendMessage = () => {
                     content: msg.value
                 }),
             });
-        })();
 
-        msg.value = "";
+            msg.value = "";
+        })();
     }
     else {
         alert("Can't send empty message!");
