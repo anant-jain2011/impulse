@@ -63,7 +63,7 @@ const displayMessage = (content, position, id, sender) => {
     const contentHtml = document.createElement("div");
     contentHtml.innerHTML = content;
     
-    newMsg.appendChild(contentHtml.firstElementChild);
+    newMsg.appendChild(contentHtml.firstElementChild || content);
     msgBox.appendChild(newMsg);
 };
 
