@@ -48,11 +48,36 @@ const displayMessage = (content, position, id, sender) => {
     const newMsg = document.createElement("span");
     newMsg.classList.add(`msg`);
     newMsg.classList.add(`msg-${position}`);
-    
+
+    msg.addEventListener("mousedown", () => {
+        let timeOut = setTimeout(() => {
+            msg.style.backgroundColor = "gray";
+            dlen.parentElement.style.display = "flex";
+
+            if (!localStorage.getItem("selected").includes(msg.id)) {
+                localStorage.setItem("selected", localStorage.getItem("selected") + msg.id + " ");
+            }
+
+            dlen.innerHTML = "Delete " + localStorage.getItem("selected").trim().split(" ").length + " Chat(s)";
+
+            localStorage.setItem("selectionMode", true);
+        }, 1000);
+
+        localStorage.setItem("timeOut", timeOut);
+    });
+
+    msg.addEventListener("mouseup", () => {
+        clearTimeout(localStorage.getItem("timeOut"));
+
+        if (eval(localStorage.getItem("selectionMode"))) {
+            document.querySelectorAll(".msg").forEach(msg2 => msg2.onclick = toggleSelected);
+        }
+    });
+
     if (id) {
         newMsg.id = id;
     }
-    
+
     if (sender) {
         const uname = document.createElement("span");
         uname.innerHTML = sender ? `<b>${sender}</b> ` : "";
@@ -60,10 +85,12 @@ const displayMessage = (content, position, id, sender) => {
         newMsg.appendChild(uname);
     }
 
+    
+
     const contentHtml = document.createElement("div");
     contentHtml.innerHTML = content;
-    
-    newMsg.appendChild(contentHtml.firstElementChild || content);
+
+    newMsg.appendChild(contentHtml);
     msgBox.appendChild(newMsg);
 };
 
